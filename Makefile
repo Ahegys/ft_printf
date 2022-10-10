@@ -1,8 +1,8 @@
-NAME = ft_printf.a
+NAME = libftprintf.a
 
-SRC = ft_printf.c ft_printf.h main.c
+SRC = ft_printf.c ft_utilities.c args.c main.c
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -g
 
 C = cc
 

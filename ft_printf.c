@@ -1,28 +1,28 @@
 #include "ft_printf.h"
-#include <stdio.h>
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *format, ...)
 {
-	int	i;
+	va_list	arg;
+	int		len;
 	char	prefix;
-	char	keys[4] = {'c', 'i', 'p', 'x'};
+
 	prefix = '%';
-	i = 0;
-	while (str[i])
+	len = 0;
+	va_start(arg, format);
+	while (*format)
 	{
-		if (str[i] == prefix)
+		if (*format != prefix)
 		{
-			i++;
-			if (str[i] == keys[0])
-				printf("print caracter!\n");
-			else if (str[i] == keys[1])
-				printf("print intenger!\n");
-			else if (str[i] == keys[2])
-				printf("print pointer!\n");
-			else if (str[i] == keys[3])
-				printf("print hexadecimal!\n");
+			write(1, format++, 1);
+			len++;
 		}
-		i++;
+		else
+		{
+			format++;
+			len = check_prefixs(format, len, arg);
+			format++;
+		}
 	}
-	return (0);
+	va_end(arg);
+	return (len);
 }
