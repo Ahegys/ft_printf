@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afelipe- <afelipe-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/10 12:19:01 by afelipe-          #+#    #+#             */
+/*   Updated: 2022/10/10 12:19:04 by afelipe-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 //-------------------------MACROS-----------------------------------------
 # define HEXA_LOWER "0123456789abcdef"
 # define HEXA_UPPER "0123456789ABCDEF"
 # define DECA "0123456789"
-# define err "NOTHING VALUE!"
-# define Err "NOTHING"
+# define ERR "NOTHING VALUE!"
+# define ERRO "NOTHING"
 
 //-------------------------includes---------------------------------------
 # include <stdarg.h>

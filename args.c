@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   args.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afelipe- <afelipe-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/10 12:19:20 by afelipe-          #+#    #+#             */
+/*   Updated: 2022/10/10 12:19:22 by afelipe-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	p_char(const char *format, int len, va_list arg)
@@ -32,7 +44,7 @@ int	p_ptr(const char *format, int len, va_list arg)
 		p = va_arg(arg, unsigned long);
 		if (!p)
 		{
-			str = Err;
+			str = ERRO;
 			write(1, str, ft_strlen(str));
 			len = len + ft_strlen(str);
 		}
@@ -57,7 +69,7 @@ int p_stdi(const char *format, int len, va_list arg)
 	{
 		str = va_arg(arg, char *);
 		if (!str)
-			str = err;
+			str = ERR;
 		write(1, str, ft_strlen(str));
 		len = len + ft_strlen(str);
 	}
