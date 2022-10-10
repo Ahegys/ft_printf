@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: afelipe- <afelipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 12:19:20 by afelipe-          #+#    #+#             */
-/*   Updated: 2022/10/10 12:19:22 by afelipe-         ###   ########.fr       */
+/*   Created: 2022/10/10 14:17:21 by afelipe-          #+#    #+#             */
+/*   Updated: 2022/10/10 19:32:14 by afelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	p_char(const char *format, int len, va_list arg)
 {
-	int	i;
-	char *key;
+	int		i;
+	char	*key;
 
 	key = "c%";
 	if (*format == key[1])
@@ -34,9 +34,9 @@ int	p_char(const char *format, int len, va_list arg)
 
 int	p_ptr(const char *format, int len, va_list arg)
 {
-	char			*str;
 	unsigned long	p;
-	char *key;
+	char			*str;
+	char			*key;
 
 	key = "p";
 	if (*format == key[0])
@@ -58,14 +58,12 @@ int	p_ptr(const char *format, int len, va_list arg)
 	return (len);
 }
 
-int p_stdi(const char *format, int len, va_list arg)
+int	p_stdi(const char *format, int len, va_list arg)
 {
 	char		*str;
 	long int	i;
-	char		*key;
 
-	key = "sdi-";
-	if (*format == key[0])
+	if (*format == 's')
 	{
 		str = va_arg(arg, char *);
 		if (!str)
@@ -73,12 +71,12 @@ int p_stdi(const char *format, int len, va_list arg)
 		write(1, str, ft_strlen(str));
 		len = len + ft_strlen(str);
 	}
-	else if (*format == key[1] || *format == key[2])
+	else if (*format == 'd' || *format == 'i')
 	{
 		i = va_arg(arg, int);
 		if (i < 0)
 		{
-			ft_putchar(key[3]);
+			ft_putchar('-');
 			len++;
 			i *= -1;
 		}
@@ -91,7 +89,7 @@ int p_stdi(const char *format, int len, va_list arg)
 int	p_ux(const char *format, int len, va_list arg)
 {
 	unsigned int	nbr;
-	char	*key;
+	char			*key;
 
 	key = "uxX";
 	if (*format == key[0])

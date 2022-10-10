@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: afelipe- <afelipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 12:19:04 by afelipe-          #+#    #+#             */
-/*   Updated: 2022/10/10 12:19:06 by afelipe-         ###   ########.fr       */
+/*   Created: 2022/10/10 14:18:00 by afelipe-          #+#    #+#             */
+/*   Updated: 2022/10/10 16:29:44 by afelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_putnbr(unsigned long num, char *n)
 
 void	ft_putchar(char c)
 {
-	write (1, &c, 1);
+	write(1, &c, 1);
 }
 
 int	ft_strlen(const char *s)
@@ -51,6 +51,7 @@ int	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+
 int	check_prefixs(const char *format, int len, va_list arg)
 {
 	char	str;

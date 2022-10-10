@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: afelipe- <afelipe-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/10 12:19:15 by afelipe-          #+#    #+#              #
-#    Updated: 2022/10/10 12:19:17 by afelipe-         ###   ########.fr        #
+#    Created: 2022/10/10 11:46:20 by afelipe-          #+#    #+#              #
+#    Updated: 2022/10/11 00:48:25 by afelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,16 +23,16 @@ INCLUDE = ft_printf.h
 C = cc
 
 $(NAME):	$(OBJS) $(INCLUDE)
-	ar -rcs $(NAME) $(OBJS)
 
 %.o:	%.c
 	$(CC) $(FLAGS) -g -c $< -o $@
+	ar -rcs $(NAME) $@
 all: $(NAME)
 
 clean:
 	rm -rf $(OBJS)
 
-fclean:
+fclean:		clean
 	rm -rf $(NAME)
 
 re: fclean all
